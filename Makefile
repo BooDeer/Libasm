@@ -6,14 +6,14 @@
 #    By: hboudhir <hboudhir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/21 13:16:38 by hboudhir          #+#    #+#              #
-#    Updated: 2020/12/23 14:58:36 by hboudhir         ###   ########.fr        #
+#    Updated: 2020/12/24 18:58:28 by hboudhir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NASM = nasm -f macho64
 AR	 = ar -rc
 NAME = libasm.a
-SRC  = ft_strlen.s
+SRC  = ft_strlen.s ft_strcpy.s ft_strcmp.s
 CC	 = gcc -Wall -Werror -Wextra
 
 
