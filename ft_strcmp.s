@@ -1,15 +1,28 @@
-;section	.text
-;	global	_ft_strcpy
+section     .text
+            global _ft_strcmp
 
-;_ft_strcpy:
-;	mov	rax, -1					; i = -1
+_ft_strcmp:
+            xor		r10, r10
+			xor		rcx, rcx
+			xor		rbx, rbx
 
-;_loop:
-;	inc	rax						; i++
-;	mov	cl, byte [rdi + rax]	; [rdi + rax] = s1[i]
-;	mov	dl, byte [rsi + rax]	; [rsi + rax] = s2[i]
-;	cmp	cl, dl					; compare dl to cl
-;	jne	_exit_diff				;
+loop:
+			mov cl, [rdi + r10]
+			mov bl, [rsi + r10]
+			cmp	cl, 0
+			je	return
+			cmp bl, 0
+			je	return
+			cmp	cl, bl
+			je	incer
+			jmp return
 
-;_exit_diff:
-;	rax 
+incer:
+			inc r10
+			mov rax, 0
+			jmp	loop
+
+return:
+			sub	rcx, rbx
+			mov rax, rcx
+			ret

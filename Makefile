@@ -6,14 +6,14 @@
 #    By: hboudhir <hboudhir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/21 13:16:38 by hboudhir          #+#    #+#              #
-#    Updated: 2020/12/24 18:58:28 by hboudhir         ###   ########.fr        #
+#    Updated: 2021/01/09 15:40:38 by hboudhir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NASM = nasm -f macho64
 AR	 = ar -rc
 NAME = libasm.a
-SRC  = ft_strlen.s ft_strcpy.s ft_strcmp.s
+SRC  = ft_strlen.s ft_strcpy.s ft_strcmp.s ft_write.s ft_read.s ft_strdup.s
 CC	 = gcc -Wall -Werror -Wextra
 
 
@@ -25,7 +25,7 @@ $(NAME): $(SRC:.s=.o)
 	@echo "Creating the library."
 	$(AR) $(NAME) $(SRC:.s=.o)
 	ranlib $(NAME)
-	$(CC) main.c $(NAME)
+	#$(CC) main.c $(NAME)
 	
 clean:
 	@rm -rf $(SRC:.s=.o)
